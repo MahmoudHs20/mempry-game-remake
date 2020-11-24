@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+.app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.siide {
+  background-color: rgb(15, 15, 15);
+  color: azure;
+  padding-top: 50px;
+}
+.maiin {
+  background-color: rgb(159, 186, 187);
+}
+.game {
+  border: 3px solid azure;
+  box-shadow: -1px 1px 34px 3px azure;
+}
+.card {
+  margin: 5px;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 15px;
+}
+.show {
+  position: absolute;
+  transform: scale(5) translateY(30px);
+  z-index: 99;
+}
+.card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.front {
+  z-index: 2;
+}
+.back {
+  z-index: 1;
+}
+.hide {
+  visibility: none;
+}
+.option {
+  text-align: center;
+  border: 1px solid azure;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px 10px;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 2px;
+}
+.option:hover {
+  border: 2px solid rgba(51, 51, 100, 0.822);
+}
+ul {
+  text-align: start;
+  text-decoration: underline;
+  list-style-type: square;
+  font-weight: 300;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 50px;
+}
+@media (max-width: 480px) {
+  .container {
+    margin: 14px auto 90px;
+  }
+  .maiin {
+    order: 1;
+  }
+  .card {
+    width: 60px;
+    height: 60px;
+  }
+  .siide {
+    order: 2;
+  }
+}
