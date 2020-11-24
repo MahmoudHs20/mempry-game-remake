@@ -7,7 +7,7 @@ var cards = document.getElementsByClassName("card"),
   age = document.getElementById("age"),
   winSound = document.getElementById("winSound"),
   loseSond = document.getElementById("loseSond");
-
+cards = Array.from(cards);
 var pair = [
   { index: null, value: null },
   { index: null, value: null }
@@ -15,23 +15,48 @@ var pair = [
 var tries = 0;
 function compare() {
   tries = 0;
-  console.log("DONE");
+  if (pair[0].value === pair[1].value) {
+    winSound.play();
+  } else {
+    loseSond.play();
+  }
+  setTimeout(() => {
+    cards[pair[0].index].firstElementChild.style.display = "block";
+    cards[pair[1].index].firstElementChild.style.display = "block";
+    console.log("DONE");
+    pair = [
+      { index: null, value: null },
+      { index: null, value: null }
+    ];
+  }, 3500);
 }
-cards = Array.from(cards);
+
 cards.map(card => {
   card.onclick = function() {
-    card.firstElementChild.style.display = "none";
-    card.classList.add("show");
-    setTimeout(function() {
-      card.classList.remove("show");
-      pair[tries].value = card.lastElementChild.getAttribute("src");
-      pair[tries].index = cards.indexOf(card);
-      if (tries === 1) {
-        compare();
-        return;
-      }
+    if (tries === 0 && pair[0].value === null && pair[1].value === null) {
+      card.firstElementChild.style.display = "none";
+      card.classList.add("show");
       tries += 1;
-    }, 2000);
+      card.setAttribute("show", "");
+      pair[0].value = card.lastElementChild.getAttribute("src");
+      pair[0].index = cards.indexOf(card);
+      setTimeout(function() {
+        card.classList.remove("show");
+      }, 2000);
+    } else if (pair[1].value === null && tries === 1) {
+      if (!card.hasAttribute("show")) {
+        card.firstElementChild.style.display = "none";
+        card.classList.add("show");
+        cards[pair[0].index].removeAttribute("show");
+        tries = 0;
+        pair[1].value = card.lastElementChild.getAttribute("src");
+        pair[1].index = cards.indexOf(card);
+        setTimeout(function() {
+          card.classList.remove("show");
+        }, 2000);
+        compare();
+      }
+    }
   };
 });
 loginBtn.onclick = function() {
