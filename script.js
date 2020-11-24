@@ -19,9 +19,13 @@ var tries = 0;
 function compare() {
   tries = 0;
   if (pair[0].value === pair[1].value) {
-    winSound.play();
+    setTimeout(() => {
+      winSound.play();
+    }, 1200);
   } else {
-    loseSond.play();
+    setTimeout(() => {
+      loseSond.play();
+    }, 1200);
   }
   setTimeout(() => {
     cards[pair[0].index].firstElementChild.style.display = "block";
