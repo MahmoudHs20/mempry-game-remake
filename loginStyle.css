@@ -8,6 +8,7 @@
   align-items: center;
   background-color: rgb(38, 175, 90);
   z-index: 9999999;
+  transition: 1.2s all ease-in-out;
 }
 #login {
   width: 100%;
