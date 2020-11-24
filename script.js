@@ -1,3 +1,6 @@
+window.onload = function() {
+  console.log("Loading Done");
+};
 var cards = document.getElementsByClassName("card"),
   loginBtn = document.getElementById("login"),
   loginPage = document.getElementById("loginPage"),
