@@ -15,7 +15,20 @@ var pair = [
   { index: null, value: null },
   { index: null, value: null }
 ];
+var num = document.querySelector(".counterSpan");
 var tries = 0;
+function countDown() {
+  var n = 1;
+  num.parentElement.style.visibility = "visible";
+  num.classList.add("animate");
+  setInterval(function() {
+    if (n === 3) num.textContent = "GO";
+    else num.textContent = ++n;
+  }, 2000);
+  setTimeout(() => {
+    num.parentElement.style.display = "none";
+  }, 7200);
+}
 function compare() {
   tries = 0;
   if (pair[0].value === pair[1].value) {
@@ -71,4 +84,5 @@ loginBtn.onclick = function() {
     city.value && password.value && username.value && age.value
       ? "hidden"
       : "visiable";
+  countDown();
 };
