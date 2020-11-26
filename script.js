@@ -3,6 +3,7 @@ window.onload = function() {
 };
 var cards = document.getElementsByClassName("card"),
   loginBtn = document.getElementById("login"),
+  restart = document.querySelector(".restart"),
   loginPage = document.getElementById("loginPage"),
   city = document.getElementById("city"),
   password = document.getElementById("password"),
@@ -33,22 +34,22 @@ function compare() {
   tries = 0;
   if (pair[0].value === pair[1].value) {
     setTimeout(() => {
+      restart.parentElement.parentElement.style.visibility = "visible";
       winSound.play();
     }, 1200);
   } else {
     setTimeout(() => {
       loseSond.play();
+      setTimeout(() => {
+        cards[pair[0].index].firstElementChild.style.display = "block";
+        cards[pair[1].index].firstElementChild.style.display = "block";
+        pair = [
+          { index: null, value: null },
+          { index: null, value: null }
+        ];
+      }, 3500);
     }, 1200);
   }
-  setTimeout(() => {
-    cards[pair[0].index].firstElementChild.style.display = "block";
-    cards[pair[1].index].firstElementChild.style.display = "block";
-    console.log("DONE");
-    pair = [
-      { index: null, value: null },
-      { index: null, value: null }
-    ];
-  }, 3500);
 }
 
 cards.map(card => {
@@ -86,3 +87,42 @@ loginBtn.onclick = function() {
       : "visiable";
   countDown();
 };
+restart.onclick = function() {
+  restart.parentElement.parentElement.style.visibility = "hidden";
+  cards[pair[0].index].firstElementChild.style.display = "block";
+  cards[pair[1].index].firstElementChild.style.display = "block";
+  pair = [
+    { index: null, value: null },
+    { index: null, value: null }
+  ];
+  shuffle();
+};
+
+// Shuffle Fucntion
+
+function shuffle() {
+  let images = [];
+  let i = 0;
+  cards.map(card => {
+    images.push(card.lastElementChild.getAttribute("src"));
+  });
+  images = shuffleArray(images);
+  cards.forEach(card => {
+    card.lastElementChild.setAttribute("src", images[i++]);
+  });
+}
+function shuffleArray(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
