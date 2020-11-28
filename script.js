@@ -13,6 +13,7 @@ var cards = document.getElementsByClassName("card"),
   winSound = document.getElementById("winSound"),
   loseSond = document.getElementById("loseSond"),
   backmusic = document.getElementById("backmusic");
+
 cards = Array.from(cards);
 var pair = [
   { index: null, value: null },
