@@ -18,6 +18,7 @@ var pair = [
 ];
 var num = document.querySelector(".counterSpan");
 var tries = 0;
+
 function countDown() {
   var n = 1;
   num.parentElement.style.visibility = "visible";
@@ -30,6 +31,7 @@ function countDown() {
     num.parentElement.style.display = "none";
   }, 7200);
 }
+
 function compare() {
   tries = 0;
   if (pair[0].value === pair[1].value) {
