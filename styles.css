@@ -1,6 +1,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 .app {
   height: 100%;
@@ -19,22 +20,34 @@ body {
 }
 .game {
   border: 3px solid azure;
-  box-shadow: -1px 1px 20px 1px rgba(240, 255, 255, 0.5);
+  box-shadow: -1px 1px 20px 1px rgba(0, 0, 0, 0.5);
 }
 .card {
-  margin: 5px;
+  margin: 15px;
   width: 150px;
   height: 150px;
   position: relative;
-  border-radius: 15px;
+  border-radius: 50%;
+  box-shadow: -1px 1px 20px 1px rgba(0, 0, 0, 0.404);
+}
+.card img {
+  border-radius: 50%;
 }
 .show {
   position: absolute;
   transform: scale(5) translateY(30px);
   z-index: 99;
+  border-radius: 0;
+}
+.show img {
+  border-radius: 0;
 }
 .logo-cont {
-  margin: 17px 0 30px;
+  margin-bottom: -20px;
+}
+.logo-cont img {
+  width: 248px;
+  transform: scale(2);
 }
 .card-img {
   position: absolute;
@@ -141,10 +154,10 @@ ul {
     margin: 14px auto 90px;
   }
   .logo-cont {
-    margin-bottom: -20px 0;
+    margin-bottom: -30px;
   }
   .logo-cont img {
-    transform: scale(0.8);
+    transform: scale(1.5);
   }
   .maiin {
     order: 1;
@@ -152,6 +165,7 @@ ul {
   .card {
     width: 60px;
     height: 60px;
+    margin: 10px;
   }
   .siide {
     order: 2;
@@ -164,5 +178,6 @@ ul {
   }
   .show {
     transform: scale(5.8) translateY(20px);
+    border: none;
   }
 }
