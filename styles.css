@@ -162,4 +162,7 @@ ul {
   .restart {
     width: 300px;
   }
+  .show {
+    transform: scale(5.8) translateY(20px);
+  }
 }
