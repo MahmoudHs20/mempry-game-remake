@@ -191,8 +191,8 @@ ul {
     padding: 10px 30px;
     border-radius: 50%;
     height: min-content;
-    transform: translateY(-59px);
-    -webkit-transform: translateY(-59px);
+    transform: translateY(-69px);
+    -webkit-transform: translateY(-69px);
     cursor: pointer;
   }
 }
