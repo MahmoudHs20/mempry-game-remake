@@ -177,7 +177,7 @@ ul {
     width: 300px;
   }
   .show {
-    transform: scale(5.8) translateY(20px) translateX(-0.2px);
+    transform: scale(5.8) translateY(20px) translateX(-0.5px);
     border: none;
   }
 }
