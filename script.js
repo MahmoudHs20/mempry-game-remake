@@ -66,7 +66,7 @@ cards.map(card => {
       pair[0].index = cards.indexOf(card);
       setTimeout(function() {
         card.classList.remove("show");
-      }, 3000);
+      }, 5000);
     } else if (pair[1].value === null && tries === 1) {
       if (!card.hasAttribute("show")) {
         card.firstElementChild.style.display = "none";
@@ -77,7 +77,7 @@ cards.map(card => {
         pair[1].index = cards.indexOf(card);
         setTimeout(function() {
           card.classList.remove("show");
-        }, 3000);
+        }, 5000);
         compare();
       }
     }
