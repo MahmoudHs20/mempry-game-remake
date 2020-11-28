@@ -10,7 +10,8 @@ var cards = document.getElementsByClassName("card"),
   username = document.getElementById("username"),
   age = document.getElementById("age"),
   winSound = document.getElementById("winSound"),
-  loseSond = document.getElementById("loseSond");
+  loseSond = document.getElementById("loseSond"),
+  backmusic = document.getElementById("backmusic");
 cards = Array.from(cards);
 var pair = [
   { index: null, value: null },
@@ -83,6 +84,7 @@ cards.map(card => {
   };
 });
 loginBtn.onclick = function() {
+  backmusic.play();
   loginPage.style.visibility =
     city.value && password.value && username.value && age.value
       ? "hidden"
