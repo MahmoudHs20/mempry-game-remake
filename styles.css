@@ -89,6 +89,9 @@ ul {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 50px;
 }
+.option a {
+  cursor: pointer;
+}
 .endScreen {
   position: absolute;
   top: 0;

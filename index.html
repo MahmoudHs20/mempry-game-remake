@@ -37,10 +37,10 @@
           Language
           <ul style="list-style-type: disc;">
             <li>
-              <select name="lang" id="lang">
-                <option onclick="en();" value="en">English</option>
-                <option onclick="ar();" value="ar">Arabic</option>
-              </select>
+              <a onclick="en();  ">English</a>
+            </li>
+            <li>
+              <a onclick="ar();">Arabic</a>
             </li>
           </ul>
         </div>
@@ -320,11 +320,11 @@ Prize
 Language
 <ul style="list-style-type: disc;">
     <li>
-              <select name="lang" id="lang">
-                <option onclick="en();" >English</option>
-                <option onclick="ar();">Arabic</option>
-              </select>
+            <a onclick="en();" >English</a>
             </li>
+            <li>
+                <a onclick="ar();" >Arabic</a>
+</li>
 </ul>
 </div>`;
       var arContent = `<div class="option">
@@ -348,12 +348,14 @@ Language
 <div class="option">
   اللغة
   <ul style="list-style-type: disc;" >
-      <div class="form-group">
-              <select name="lang" id="lang">
-                <option onclick="en();" >انكليزي</option>
-                <option onclick="ar();" >عربي</option>
-              </select>
-   </div>
+
+        <li>
+            <a onclick="en();" >انكليزي</a>
+            </li>
+            <li>
+                <a onclick="ar();" >عربي</a>
+</li>
+
   </ul>
 </div>`;
 
