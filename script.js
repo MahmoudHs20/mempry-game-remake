@@ -103,7 +103,7 @@ restart.onclick = function() {
   shuffle();
 };
 more.onclick = function() {
-  window.scrollBy(0, 1200);
+  window.scrollBy(0, 720);
 };
 // Shuffle Fucntion
 
