@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bbackground: #bc4e9c; /* fallback for old browsers */
+  background: #bc4e9c; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     #f80759,
