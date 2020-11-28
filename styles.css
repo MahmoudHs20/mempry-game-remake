@@ -155,6 +155,7 @@ ul {
   }
   .logo-cont {
     margin-bottom: -50px;
+    margin-top: -20px;
   }
   .logo-cont img {
     transform: scale(1.5);
