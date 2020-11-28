@@ -4,6 +4,7 @@ window.onload = function() {
 var cards = document.getElementsByClassName("card"),
   loginBtn = document.getElementById("login"),
   restart = document.querySelector(".restart"),
+  more = document.querySelector(".more"),
   loginPage = document.getElementById("loginPage"),
   city = document.getElementById("city"),
   password = document.getElementById("password"),
@@ -101,7 +102,9 @@ restart.onclick = function() {
   ];
   shuffle();
 };
-
+more.onclick = function() {
+  window.scrollBy(0, 1200);
+};
 // Shuffle Fucntion
 
 function shuffle() {

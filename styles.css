@@ -154,8 +154,8 @@ ul {
     margin: 14px auto 90px;
   }
   .logo-cont {
-    margin-bottom: -50px;
-    margin-top: -20px;
+    margin-bottom: -70px;
+    margin-top: -70px;
   }
   .logo-cont img {
     transform: scale(1.5);
@@ -180,5 +180,18 @@ ul {
   .show {
     transform: scale(5.8) translateY(20px) translateX(-0.5px);
     border: none;
+  }
+  .more {
+    font-weight: bolder;
+    font-size: x-large;
+    background: white;
+    color: #f20f60;
+    width: min-content;
+    margin: auto;
+    padding: 10px 30px;
+    border-radius: 50%;
+    height: min-content;
+    translate: 0px -53px;
+    cursor: pointer;
   }
 }
