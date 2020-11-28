@@ -36,7 +36,7 @@ function compare() {
     setTimeout(() => {
       restart.parentElement.parentElement.style.visibility = "visible";
       winSound.play();
-    }, 1200);
+    }, 2000);
   } else {
     setTimeout(() => {
       loseSond.play();
@@ -48,7 +48,7 @@ function compare() {
           { index: null, value: null }
         ];
       }, 3500);
-    }, 1200);
+    }, 2000);
   }
 }
 
@@ -63,7 +63,7 @@ cards.map(card => {
       pair[0].index = cards.indexOf(card);
       setTimeout(function() {
         card.classList.remove("show");
-      }, 2000);
+      }, 3000);
     } else if (pair[1].value === null && tries === 1) {
       if (!card.hasAttribute("show")) {
         card.firstElementChild.style.display = "none";
@@ -74,7 +74,7 @@ cards.map(card => {
         pair[1].index = cards.indexOf(card);
         setTimeout(function() {
           card.classList.remove("show");
-        }, 2000);
+        }, 3000);
         compare();
       }
     }
