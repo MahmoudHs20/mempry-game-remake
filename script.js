@@ -1,10 +1,11 @@
-window.onload = function() {
-  console.log("Loading Done");
-};
 var cards = document.getElementsByClassName("card"),
   loginBtn = document.getElementById("login"),
   restart = document.querySelector(".restart"),
   more = document.querySelector(".more"),
+  winners = document.querySelector(".show-winners"),
+  winnersBox = document.querySelector(".winners-container"),
+  closeWinners = document.querySelector(".close-winners"),
+  side = document.querySelector(".siide"),
   loginPage = document.getElementById("loginPage"),
   city = document.getElementById("city"),
   password = document.getElementById("password"),
@@ -13,7 +14,11 @@ var cards = document.getElementsByClassName("card"),
   winSound = document.getElementById("winSound"),
   loseSond = document.getElementById("loseSond"),
   backmusic = document.getElementById("backmusic");
-
+//                               //
+window.onload = function() {
+  backmusic.play();
+  countDown();
+};
 cards = Array.from(cards);
 var pair = [
   { index: null, value: null },
@@ -41,6 +46,10 @@ function compare() {
     setTimeout(() => {
       restart.parentElement.parentElement.style.visibility = "visible";
       winSound.play();
+      cards[pair[0].index].classList.remove("show");
+      cards[pair[1].index].classList.remove("show");
+      cards[pair[0].index].querySelector(".views").style.visibility = "hidden";
+      cards[pair[1].index].querySelector(".views").style.visibility = "hidden";
     }, 2000);
   } else {
     setTimeout(() => {
@@ -48,20 +57,30 @@ function compare() {
       setTimeout(() => {
         cards[pair[0].index].firstElementChild.style.display = "block";
         cards[pair[1].index].firstElementChild.style.display = "block";
+        cards[pair[0].index].querySelector(".views").style.visibility =
+          "hidden";
+        cards[pair[1].index].querySelector(".views").style.visibility =
+          "hidden";
         pair = [
           { index: null, value: null },
           { index: null, value: null }
         ];
-      }, 3500);
+      }, 4900);
     }, 2000);
   }
 }
-
+winners.onclick = () => {
+  winnersBox.style.top = "0";
+};
+closeWinners.onclick = () => {
+  winnersBox.style.top = "-110%";
+};
 cards.map(card => {
   card.onclick = function() {
     if (tries === 0 && pair[0].value === null && pair[1].value === null) {
       card.firstElementChild.style.display = "none";
       card.classList.add("show");
+      card.querySelector(".views").style.visibility = "visible";
       tries += 1;
       card.setAttribute("show", "");
       pair[0].value = card.lastElementChild.getAttribute("src");
@@ -73,6 +92,7 @@ cards.map(card => {
       if (!card.hasAttribute("show")) {
         card.firstElementChild.style.display = "none";
         card.classList.add("show");
+        card.querySelector(".views").style.visibility = "visible";
         cards[pair[0].index].removeAttribute("show");
         tries = 0;
         pair[1].value = card.lastElementChild.getAttribute("src");
@@ -86,12 +106,10 @@ cards.map(card => {
   };
 });
 loginBtn.onclick = function() {
-  backmusic.play();
   loginPage.style.visibility =
     city.value && password.value && username.value && age.value
       ? "hidden"
       : "visiable";
-  countDown();
 };
 restart.onclick = function() {
   restart.parentElement.parentElement.style.visibility = "hidden";
@@ -104,7 +122,11 @@ restart.onclick = function() {
   shuffle();
 };
 more.onclick = function() {
-  window.scrollBy(0, 720);
+  if ((Window, innerWidth < 500)) {
+    window.scrollBy(0, 720);
+  } else {
+    side.classList.toggle("showSide");
+  }
 };
 // Shuffle Fucntion
 
