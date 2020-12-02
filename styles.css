@@ -246,6 +246,7 @@ ul {
   }
   .maiin {
     order: 1;
+    left: 0%;
   }
   .card {
     width: 65px;
