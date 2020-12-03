@@ -234,6 +234,9 @@ ul {
   left: 0;
 }
 @media (max-width: 480px) {
+  .btns-container {
+    margin-top: 40px;
+  }
   .views {
     font-size: 2.5px !important;
     padding: 0 2px;
