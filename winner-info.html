@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="loginStyle.css" />
+    <title>WINNER</title>
+  </head>
+  <body>
+    <div class="login-cont">
+      <div class="login-form" style="margin: 160px auto;">
+        <form>
+          <h4 class="modal-title">
+            اسكمل بياناتك الشخصية <br />
+            لاستلام الجائزة
+          </h4>
+          <div class="form-group">
+            <input
+              id="address"
+              type="text"
+              class="form-control"
+              placeholder="عنوانك"
+              required="required"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              id="mob"
+              type="text"
+              class="form-control"
+              placeholder="رثم الجوال"
+              required="required"
+            />
+          </div>
+          <a
+            id="done"
+            href="#"
+            style="background: rgb(235, 44, 149);"
+            class="btn btn-block btn-lg text-light"
+            >تم</a
+          >
+        </form>
+        <hr />
+        <h4 id="errMsg" class="text-light"></h4>
+      </div>
+    </div>
+
+    <script src="winnerInfo.js"></script>
+  </body>
+</html>

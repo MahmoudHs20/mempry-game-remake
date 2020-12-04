@@ -1,6 +1,6 @@
 var cards = document.getElementsByClassName("card"),
   loginBtn = document.getElementById("login"),
-  restart = document.querySelector(".restart"),
+  goContinue = document.querySelector(".continue"),
   more = document.querySelector(".more"),
   winners = document.querySelector(".show-winners"),
   winnersBox = document.querySelector(".winners-container"),
@@ -44,7 +44,7 @@ function compare() {
   tries = 0;
   if (pair[0].value === pair[1].value) {
     setTimeout(() => {
-      restart.parentElement.parentElement.style.visibility = "visible";
+      goContinue.parentElement.parentElement.style.visibility = "visible";
       winSound.play();
       cards[pair[0].index].classList.remove("show");
       cards[pair[1].index].classList.remove("show");
