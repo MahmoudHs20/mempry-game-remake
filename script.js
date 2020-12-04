@@ -111,7 +111,7 @@ loginBtn.onclick = function() {
       ? "hidden"
       : "visiable";
 };
-restart.onclick = function() {
+/*restart.onclick = function() {
   restart.parentElement.parentElement.style.visibility = "hidden";
   cards[pair[0].index].firstElementChild.style.display = "block";
   cards[pair[1].index].firstElementChild.style.display = "block";
@@ -120,12 +120,13 @@ restart.onclick = function() {
     { index: null, value: null }
   ];
   shuffle();
-};
+}; */
 more.onclick = function() {
   if ((Window, innerWidth < 500)) {
     window.scrollBy(0, 720);
   } else {
     side.classList.toggle("showSide");
+    console.log(side);
   }
 };
 // Shuffle Fucntion

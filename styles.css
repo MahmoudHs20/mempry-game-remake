@@ -176,7 +176,8 @@ ul {
   animation-duration: 2s;
   animation-iteration-count: 20;
 }
-.more {
+.more,
+.show-winners {
   font-weight: bolder;
   font-size: x-large;
   background: white;
@@ -235,7 +236,7 @@ ul {
 }
 @media (max-width: 480px) {
   .btns-container {
-    margin-top: 40px;
+    margin-top: 36px;
   }
   .views {
     font-size: 2.5px !important;
