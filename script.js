@@ -43,6 +43,7 @@ function countDown() {
 function compare() {
   tries = 0;
   if (pair[0].value === pair[1].value) {
+    sessionStorage.setItem("prize", pair[0].value);
     setTimeout(() => {
       goContinue.parentElement.parentElement.style.visibility = "visible";
       winSound.play();

@@ -1,8 +1,13 @@
 var mob = document.getElementById("mob"),
   errorMsg = document.getElementById("errMsg"),
   done = document.getElementById("done"),
-  mainBox = document.querySelector(".login-cont");
+  mainBox = document.querySelector(".login-cont"),
+  prize = document.getElementById("hidden");
 var status = false;
+
+window.onload = () => {
+  prize.value = sessionStorage.getItem("prize");
+};
 
 function NumChecker(e) {
   let num = Array.from(e.value);
@@ -32,7 +37,6 @@ mob.onkeyup = function() {
 
 done.onclick = function() {
   if (status === "true") {
-    console.log("done");
     mainBox.innerHTML = `<h2 style="color: black; background: azure; padding:40px;text-align: center;">تم استلام بياناتك بنجاح <br/> سوف نتواصل معك بأقرب وقت <br/>🏆 لاستلام الجائزة
     <a href="./index.html" class="btn btn-block"style="margin-top: 30px; background: #db2979;
     color: azure;" >العودة الى اللعبة</a>
