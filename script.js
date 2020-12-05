@@ -14,6 +14,9 @@ var cards = document.getElementsByClassName("card"),
   winSound = document.getElementById("winSound"),
   loseSond = document.getElementById("loseSond"),
   backmusic = document.getElementById("backmusic");
+var wrapper = document.querySelector(".wrapper");
+var imagesInDescover = document.querySelectorAll(".wrapper .img");
+
 //                               //
 window.onload = function() {
   backmusic.play();
@@ -53,6 +56,11 @@ function compare() {
       cards[pair[1].index].querySelector(".views").style.visibility = "hidden";
     }, 2000);
   } else {
+    imagesInDescover[0].style.backgroundImage = `url(${pair[0].value})`;
+    imagesInDescover[1].style.backgroundImage = `url(${pair[1].value})`;
+    setTimeout(() => {
+      wrapper.style.display = "block";
+    }, 6300);
     setTimeout(() => {
       loseSond.play();
       setTimeout(() => {
@@ -158,3 +166,19 @@ function shuffleArray(array) {
 
   return array;
 }
+/** More about product */
+
+var btns = document.querySelectorAll(".moreAbout");
+var infoPage = document.querySelector(".product-info");
+var closeMore = document.querySelector(".closeMore");
+
+btns = Array.from(btns);
+btns.forEach(btn => {
+  btn.onclick = () => {
+    infoPage.classList.toggle("slideIn");
+  };
+});
+closeMore.onclick = () => {
+  wrapper.style.display = "none";
+};
+/** */
