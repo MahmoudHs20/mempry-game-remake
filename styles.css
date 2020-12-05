@@ -234,6 +234,83 @@ ul {
 .showSide {
   left: 0;
 }
+
+/**  More Info anout Products */
+
+.holder {
+  width: 500px;
+  height: 300px;
+  background: black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 3px 12px 1px black;
+}
+.wrapper {
+  position: absolute;
+  z-index: 50;
+  display: none;
+}
+.kol {
+  width: 50%;
+  height: 100%;
+  display: grid;
+  background: #ca2170;
+}
+.slideIn {
+  transform: translateY(290px);
+}
+.product-info {
+  background: whitesmoke;
+  border: 1px solid black;
+  height: max-content;
+  width: 100%;
+  z-index: 1;
+  border-radius: 10px;
+  position: absolute;
+  top: 0%;
+  transition: 0.7s all ease-in-out;
+  padding-top: 20px;
+  text-align: center;
+}
+.product-info ul {
+  list-style-type: disc;
+  direction: rtl;
+  padding-right: 40px;
+  font-weight: bold;
+}
+
+.img {
+  width: 125px;
+  height: 125px;
+  background: azure;
+  border-radius: 20%;
+  margin: 30px auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.moreAbout {
+  background: azure;
+  width: max-content;
+  height: max-content;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.closeMore {
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  z-index: 60;
+  right: 1px;
+  background: azure;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/*   */
 @media (max-width: 480px) {
   .btns-container {
     margin-top: 36px;
@@ -280,5 +357,8 @@ ul {
   }
   .game {
     padding: 20px 0;
+  }
+  .wrapper {
+    transform: scale(0.7);
   }
 }
