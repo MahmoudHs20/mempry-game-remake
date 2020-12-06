@@ -38,8 +38,8 @@ var pics = [
   "./images/s19.jpg",
   "./images/s1.jpg",
 ];
-pics = shuffleArray(pics);
-
+// pics = shuffleArray(pics);
+var defaultBack = "./blankback.png";
 //                               //
 window.onload = function () {
   backmusic.play();
@@ -67,7 +67,7 @@ function countDown() {
 }
 confetti.maxCount = 40;
 function compare() {
-  pics = shuffleArray(pics);
+  // pics = shuffleArray(pics);
   tries = 0;
   if (pair[0].value === pair[1].value) {
     sessionStorage.setItem("prize", pair[0].value);
@@ -89,6 +89,8 @@ function compare() {
     setTimeout(() => {
       loseSond.play();
       setTimeout(() => {
+        cards[pair[0].index].lastElementChild.setAttribute("src", defaultBack);
+        cards[pair[1].index].lastElementChild.setAttribute("src", defaultBack);
         cards[pair[0].index].firstElementChild.style.display = "block";
         cards[pair[1].index].firstElementChild.style.display = "block";
         cards[pair[0].index].querySelector(".views").style.visibility =
