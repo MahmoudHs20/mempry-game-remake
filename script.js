@@ -42,13 +42,14 @@ function countDown() {
     num.parentElement.style.display = "none";
   }, 7200);
 }
-
+confetti.maxCount = 40;
 function compare() {
   tries = 0;
   if (pair[0].value === pair[1].value) {
     sessionStorage.setItem("prize", pair[0].value);
     setTimeout(() => {
       goContinue.parentElement.parentElement.style.visibility = "visible";
+      confetti.start();
       winSound.play();
       cards[pair[0].index].classList.remove("show");
       cards[pair[1].index].classList.remove("show");
