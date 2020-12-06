@@ -16,16 +16,39 @@ var cards = document.getElementsByClassName("card"),
   backmusic = document.getElementById("backmusic");
 var wrapper = document.querySelector(".wrapper");
 var imagesInDescover = document.querySelectorAll(".wrapper .img");
+var pics = [
+  "./images/s1.jpg",
+  "./images/s2.jpg",
+  "./images/s3.jpg",
+  "./images/s4.jpg",
+  "./images/s5.jpg",
+  "./images/s6.jpg",
+  "./images/s7.jpg",
+  "./images/s8.jpg",
+  "./images/s9.jpg",
+  "./images/s10.jpg",
+  "./images/s11.jpg",
+  "./images/s12.jpg",
+  "./images/s13.jpg",
+  "./images/s14.jpg",
+  "./images/s15.jpg",
+  "./images/s16.jpg",
+  "./images/s17.jpg",
+  "./images/s18.jpg",
+  "./images/s19.jpg",
+  "./images/s1.jpg",
+];
+pics = shuffleArray(pics);
 
 //                               //
-window.onload = function() {
+window.onload = function () {
   backmusic.play();
   countDown();
 };
 cards = Array.from(cards);
 var pair = [
   { index: null, value: null },
-  { index: null, value: null }
+  { index: null, value: null },
 ];
 var num = document.querySelector(".counterSpan");
 var tries = 0;
@@ -34,7 +57,7 @@ function countDown() {
   var n = 1;
   num.parentElement.style.visibility = "visible";
   num.classList.add("animate");
-  setInterval(function() {
+  setInterval(function () {
     if (n === 3) num.textContent = "GO";
     else num.textContent = ++n;
   }, 2000);
@@ -44,6 +67,7 @@ function countDown() {
 }
 confetti.maxCount = 40;
 function compare() {
+  pics = shuffleArray(pics);
   tries = 0;
   if (pair[0].value === pair[1].value) {
     sessionStorage.setItem("prize", pair[0].value);
@@ -73,7 +97,7 @@ function compare() {
           "hidden";
         pair = [
           { index: null, value: null },
-          { index: null, value: null }
+          { index: null, value: null },
         ];
       }, 4900);
     }, 2000);
@@ -85,8 +109,9 @@ winners.onclick = () => {
 closeWinners.onclick = () => {
   winnersBox.style.top = "-110%";
 };
-cards.map(card => {
-  card.onclick = function() {
+cards.map((card) => {
+  card.onclick = function () {
+    card.lastElementChild.setAttribute("src", pics[cards.indexOf(card)]);
     if (tries === 0 && pair[0].value === null && pair[1].value === null) {
       card.firstElementChild.style.display = "none";
       card.classList.add("show");
@@ -95,10 +120,11 @@ cards.map(card => {
       card.setAttribute("show", "");
       pair[0].value = card.lastElementChild.getAttribute("src");
       pair[0].index = cards.indexOf(card);
-      setTimeout(function() {
+      setTimeout(function () {
         card.classList.remove("show");
       }, 5000);
     } else if (pair[1].value === null && tries === 1) {
+      card.lastElementChild.setAttribute("src", pics[cards.indexOf(card)]);
       if (!card.hasAttribute("show")) {
         card.firstElementChild.style.display = "none";
         card.classList.add("show");
@@ -107,7 +133,7 @@ cards.map(card => {
         tries = 0;
         pair[1].value = card.lastElementChild.getAttribute("src");
         pair[1].index = cards.indexOf(card);
-        setTimeout(function() {
+        setTimeout(function () {
           card.classList.remove("show");
         }, 5000);
         compare();
@@ -115,23 +141,14 @@ cards.map(card => {
     }
   };
 });
-loginBtn.onclick = function() {
+loginBtn.onclick = function () {
   loginPage.style.visibility =
     city.value && password.value && username.value && age.value
       ? "hidden"
       : "visiable";
 };
-/*restart.onclick = function() {
-  restart.parentElement.parentElement.style.visibility = "hidden";
-  cards[pair[0].index].firstElementChild.style.display = "block";
-  cards[pair[1].index].firstElementChild.style.display = "block";
-  pair = [
-    { index: null, value: null },
-    { index: null, value: null }
-  ];
-  shuffle();
-}; */
-more.onclick = function() {
+
+more.onclick = function () {
   if ((Window, innerWidth < 500)) {
     window.scrollBy(0, 720);
   } else {
@@ -139,16 +156,17 @@ more.onclick = function() {
     console.log(side);
   }
 };
+
 // Shuffle Fucntion
 
 function shuffle() {
   let images = [];
   let i = 0;
-  cards.map(card => {
+  cards.map((card) => {
     images.push(card.lastElementChild.getAttribute("src"));
   });
   images = shuffleArray(images);
-  cards.forEach(card => {
+  cards.forEach((card) => {
     card.lastElementChild.setAttribute("src", images[i++]);
   });
 }
@@ -174,7 +192,7 @@ var infoPage = document.querySelector(".product-info");
 var closeMore = document.querySelector(".closeMore");
 
 btns = Array.from(btns);
-btns.forEach(btn => {
+btns.forEach((btn) => {
   btn.onclick = () => {
     infoPage.classList.toggle("slideIn");
   };
