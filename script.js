@@ -13,10 +13,11 @@ var cards = document.getElementsByClassName("card"),
   age = document.getElementById("age"),
   winSound = document.getElementById("winSound"),
   loseSond = document.getElementById("loseSond"),
+  clapping = document.getElementById("clapping"),
   backmusic = document.getElementById("backmusic");
 var wrapper = document.querySelector(".wrapper");
 var imagesInDescover = document.querySelectorAll(".wrapper .img");
-var pics = [
+var pics1 = [
   "./images/s1.jpg",
   "./images/s2.jpg",
   "./images/s3.jpg",
@@ -38,12 +39,36 @@ var pics = [
   "./images/s19.jpg",
   "./images/s1.jpg",
 ];
+var pics2 = [
+  "./images/group2/t1.jpg",
+  "./images/group2/t2.jpg",
+  "./images/group2/t3.jpg",
+  "./images/group2/t4.jpg",
+  "./images/group2/t5.jpg",
+  "./images/group2/t6.jpg",
+  "./images/group2/t7.jpg",
+  "./images/group2/t8.jpg",
+  "./images/group2/t9.jpg",
+  "./images/group2/t10.jpg",
+  "./images/group2/t11.jpg",
+  "./images/group2/t12.jpg",
+  "./images/group2/t13.jpg",
+  "./images/group2/t14.jpg",
+  "./images/group2/t15.jpg",
+  "./images/group2/t16.jpg",
+  "./images/group2/t17.jpg",
+  "./images/group2/t18.jpg",
+  "./images/group2/t19.jpg",
+  "./images/group2/t1.jpg",
+];
+var pics = pics2;
 // pics = shuffleArray(pics);
 var defaultBack = "./blankback.png";
 //                               //
+backmusic.play();
 window.onload = function () {
-  backmusic.play();
   countDown();
+  var t = 2;
 };
 cards = Array.from(cards);
 var pair = [
@@ -75,6 +100,8 @@ function compare() {
       endScreen.style.visibility = "visible";
       confetti.start();
       winSound.play();
+      clapping.play();
+      backmusic.pause();
       cards[pair[0].index].classList.remove("show");
       cards[pair[1].index].classList.remove("show");
       cards[pair[0].index].querySelector(".views").style.visibility = "hidden";

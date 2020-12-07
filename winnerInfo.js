@@ -2,11 +2,13 @@ var mob = document.getElementById("mob"),
   errorMsg = document.getElementById("errMsg"),
   done = document.getElementById("done"),
   mainBox = document.querySelector(".login-cont"),
-  prize = document.getElementById("hidden");
+  prize = document.getElementById("hidden"),
+  clapping = document.getElementById("clapping");
 var status = false;
 
 window.onload = () => {
   prize.value = sessionStorage.getItem("prize");
+  clapping.play();
 };
 
 function NumChecker(e) {
@@ -17,7 +19,7 @@ function NumChecker(e) {
     errorMsg.textContent = "عذرا رقم الجوال يجب أن يتألف من 10 أرقام";
     status = false;
   } else {
-    num.forEach(n => {
+    num.forEach((n) => {
       if (!(parseInt(n) >= 0 && parseInt(n) <= 9)) {
         errorMsg.textContent = "!!!ادخل رقك الجوال بطريقة صحيحة";
         status = false;
@@ -31,11 +33,11 @@ function NumChecker(e) {
   }
 }
 
-mob.onkeyup = function() {
+mob.onkeyup = function () {
   NumChecker(mob);
 };
 
-done.onclick = function() {
+done.onclick = function () {
   if (status === "true") {
     mainBox.innerHTML = `<h2 style="color: black; background: azure; padding:40px;text-align: center;">تم استلام بياناتك بنجاح <br/> سوف نتواصل معك بأقرب وقت <br/>🏆 لاستلام الجائزة
     <a href="./index.html" class="btn btn-block"style="margin-top: 30px; background: #db2979;
