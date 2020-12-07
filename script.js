@@ -85,7 +85,7 @@ function compare() {
     imagesInDescover[1].style.backgroundImage = `url(${pair[1].value})`;
     setTimeout(() => {
       wrapper.style.display = "block";
-    }, 6300);
+    }, 5000);
     setTimeout(() => {
       loseSond.play();
       setTimeout(() => {
