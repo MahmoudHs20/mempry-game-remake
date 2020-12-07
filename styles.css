@@ -373,6 +373,7 @@ ul {
   .siide {
     order: 2;
     left: 0;
+    padding-top: 80px;
   }
   .endScreen {
     font-size: 40px;
