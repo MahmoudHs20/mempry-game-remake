@@ -345,6 +345,7 @@ ul {
 @media (max-width: 480px) {
   .btns-container {
     margin-top: 36px;
+    z-index: 12;
   }
   .views {
     font-size: 2.5px !important;
