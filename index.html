@@ -425,17 +425,43 @@ Language
   </ul>
 </div>`;
 
+      var arEnd = `<div>
+          الف مبروك لقد ربحت<br /><a href="./winner-info.html" class="continue"
+            >استكمل بيانات الربح</a
+          >
+          <h2
+            class="arrow"
+            style="position: relative; top: 20px; font-size: 90px; left: -20px"
+          >
+            ➯
+          </h2>
+        </div>`;
+      var enEnd = `<div>
+          Congrats You win<br /><a href="./winner-info.html" class="continue"
+            >Fill Your info</a
+          >
+          <h2
+            class="arrow"
+            style="position: relative; top: 20px; font-size: 90px; left: -20px"
+          >
+            ➯
+          </h2>
+        </div>`;
+
       var thePage = document.querySelector("html");
       var side = document.querySelector(".siide");
+      var theEnd = document.querySelector(".endScreen div");
       function ar() {
         thePage.setAttribute("lang", "ar");
         console.log("Ar");
         var $ar = (side.innerHTML = arContent);
+        var $theArEnd = (theEnd.innerHTML = arEnd);
       }
       function en() {
         thePage.setAttribute("lang", "en");
         console.log("en");
         var $en = (side.innerHTML = enContent);
+        var $theEnEnd = (theEnd.innerHTML = enEnd);
       }
     </script>
   </body>

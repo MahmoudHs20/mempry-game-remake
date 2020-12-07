@@ -1,6 +1,6 @@
 var cards = document.getElementsByClassName("card"),
   loginBtn = document.getElementById("login"),
-  goContinue = document.querySelector(".continue"),
+  endScreen = document.querySelector(".endScreen"),
   more = document.querySelector(".more"),
   winners = document.querySelector(".show-winners"),
   winnersBox = document.querySelector(".winners-container"),
@@ -72,7 +72,7 @@ function compare() {
   if (pair[0].value === pair[1].value) {
     sessionStorage.setItem("prize", pair[0].value);
     setTimeout(() => {
-      goContinue.parentElement.parentElement.style.visibility = "visible";
+      endScreen.style.visibility = "visible";
       confetti.start();
       winSound.play();
       cards[pair[0].index].classList.remove("show");
