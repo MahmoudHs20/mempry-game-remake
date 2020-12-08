@@ -65,10 +65,9 @@ var pics = pics2;
 // pics = shuffleArray(pics);
 var defaultBack = "./blankback.png";
 //                               //
-backmusic.play();
 window.onload = function () {
+  backmusic.play();
   countDown();
-  var t = 2;
 };
 cards = Array.from(cards);
 var pair = [
