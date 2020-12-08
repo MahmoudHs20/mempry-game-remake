@@ -66,7 +66,6 @@ var pics = pics2;
 var defaultBack = "./blankback.png";
 //                               //
 window.onload = function () {
-  backmusic.play();
   countDown();
 };
 cards = Array.from(cards);
