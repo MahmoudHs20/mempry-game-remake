@@ -24,7 +24,7 @@ body {
   background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
   background: linear-gradient(to right, #f80759, #bc4e9c);
   height: 100%;
-  left: -4%;
+  left: -110px !important;
 }
 .game {
   border: 3px solid azure;
@@ -385,7 +385,8 @@ ul {
     border: none;
   }
   .close-winners {
-    margin-top: 59%;
+    margin: auto;
+    position: relative;
   }
   .game {
     padding: 20px 0;

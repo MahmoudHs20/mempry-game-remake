@@ -126,6 +126,10 @@ function compare() {
   // pics = shuffleArray(pics);
   tries = 0;
   if (pair[0].value === pair[1].value) {
+    sessionStorage.setItem(
+      "lang",
+      document.querySelector("html").getAttribute("lang")
+    );
     sessionStorage.setItem("prize", pair[0].value);
     setTimeout(() => {
       endScreen.style.visibility = "visible";
