@@ -30,7 +30,7 @@ body {
   border: 3px solid azure;
   box-shadow: -1px 1px 20px 1px rgba(0, 0, 0, 0.5);
   height: 100%;
-  width: 835px !important;
+  width: 740px !important;
 }
 .card {
   margin: 11px 13px;
@@ -41,6 +41,9 @@ body {
 }
 .col-2 {
   max-width: 13.667% !important;
+}
+.col-12 {
+  margin-top: -20px;
 }
 .card img {
   border-radius: 50%;
@@ -56,7 +59,7 @@ body {
 }
 .logo-cont {
   margin-bottom: -46px;
-  margin-top: -46px;
+  margin-top: -75px;
 }
 .logo-cont img {
   width: 248px;

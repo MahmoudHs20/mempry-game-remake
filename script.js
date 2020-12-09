@@ -61,13 +61,45 @@ var pics2 = [
   "./images/group2/t19.jpg",
   "./images/group2/t1.jpg",
 ];
+/** More about product */
+
+var btns = document.querySelectorAll(".moreAbout");
+var infoPage = document.querySelector(".product-info");
+var closeMore = document.querySelector(".closeMore");
+
+btns = Array.from(btns);
+
+closeMore.onclick = () => {
+  wrapper.style.display = "none";
+};
+/** */
 var pics = pics2;
 // pics = shuffleArray(pics);
 var defaultBack = "./blankback.png";
 //                               //
 backmusic.play();
+
 window.onload = function () {
   countDown();
+  btns.forEach((btn) => {
+    btn.onclick = () => {
+      infoPage.classList.toggle("slideIn");
+    };
+  });
+  more.onclick = function () {
+    if ((Window, innerWidth < 500)) {
+      window.scrollBy(0, 720);
+    } else {
+      side.classList.toggle("showSide");
+      console.log(side);
+    }
+  };
+  winners.onclick = () => {
+    winnersBox.style.top = "0";
+  };
+  closeWinners.onclick = () => {
+    winnersBox.style.top = "-110%";
+  };
 };
 cards = Array.from(cards);
 var pair = [
@@ -131,12 +163,7 @@ function compare() {
     }, 2000);
   }
 }
-winners.onclick = () => {
-  winnersBox.style.top = "0";
-};
-closeWinners.onclick = () => {
-  winnersBox.style.top = "-110%";
-};
+
 cards.map((card) => {
   card.onclick = function () {
     card.lastElementChild.setAttribute("src", pics[cards.indexOf(card)]);
@@ -176,15 +203,6 @@ loginBtn.onclick = function () {
       : "visiable";
 };
 
-more.onclick = function () {
-  if ((Window, innerWidth < 500)) {
-    window.scrollBy(0, 720);
-  } else {
-    side.classList.toggle("showSide");
-    console.log(side);
-  }
-};
-
 // Shuffle Fucntion
 
 function shuffle() {
@@ -213,19 +231,3 @@ function shuffleArray(array) {
 
   return array;
 }
-/** More about product */
-
-var btns = document.querySelectorAll(".moreAbout");
-var infoPage = document.querySelector(".product-info");
-var closeMore = document.querySelector(".closeMore");
-
-btns = Array.from(btns);
-btns.forEach((btn) => {
-  btn.onclick = () => {
-    infoPage.classList.toggle("slideIn");
-  };
-});
-closeMore.onclick = () => {
-  wrapper.style.display = "none";
-};
-/** */
