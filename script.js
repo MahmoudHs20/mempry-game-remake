@@ -110,7 +110,9 @@ var num = document.querySelector(".counterSpan");
 var tries = 0;
 
 function countDown() {
-  backmusic.play();
+  setTimeout(() => {
+    backmusic.play();
+  }, 1000);
   var n = 1;
   num.parentElement.style.visibility = "visible";
   num.classList.add("animate");
