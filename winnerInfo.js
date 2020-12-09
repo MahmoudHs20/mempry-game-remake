@@ -10,7 +10,6 @@ var status = false;
 
 window.onload = () => {
   prize.value = sessionStorage.getItem("prize");
-  clapping.play();
   console.log(sessionStorage.getItem("lang"));
   if (sessionStorage.getItem("lang") === "ar") {
     title.textContent = `اسكمل بياناتك الشخصية <br />
