@@ -85,8 +85,6 @@ window.onload = function () {
     btn.onclick = () => {
       infoPage.classList.toggle("slideIn");
     };
-    backmusic.play();
-    backmusic.resume();
   });
   more.onclick = function () {
     if ((Window, innerWidth < 500)) {
@@ -112,6 +110,7 @@ var num = document.querySelector(".counterSpan");
 var tries = 0;
 
 function countDown() {
+  backmusic.play();
   var n = 1;
   num.parentElement.style.visibility = "visible";
   num.classList.add("animate");
