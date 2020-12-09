@@ -85,6 +85,8 @@ window.onload = function () {
     btn.onclick = () => {
       infoPage.classList.toggle("slideIn");
     };
+    backmusic.play();
+    backmusic.resume();
   });
   more.onclick = function () {
     if ((Window, innerWidth < 500)) {
